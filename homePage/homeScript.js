@@ -1,6 +1,7 @@
 
 //DOM element access
 const colorButtons = Array.from(document.getElementById('buttons').getElementsByTagName('button'));
+const siteNavLinks = Array.from(document.getElementbyClass('sameSiteLink'));
 const bod = document.body;
 
 function goRed() {
@@ -14,7 +15,6 @@ function goGreen() {
 }
 
 function buttonClick(event) {
-    console.log(event.target.id);
     const targetId = event.target.id;
     switch (targetId) {
         case 'red':
@@ -28,6 +28,16 @@ function buttonClick(event) {
     }
 };
 
-colorButtons.forEach(butt => {
-    butt.addEventListener('click', buttonClick);
+function siteNavClick(event) {
+    alert('page in development');
+}
+
+colorButtons.forEach(butto => {
+    butto.addEventListener('click', buttonClick);
+});
+
+siteNavLinks.forEach(link => {
+    if (link.id != 'current') {
+        link.addEventListener('click', siteNavClick);
+    }
 });

@@ -1,7 +1,7 @@
 
 //DOM element access
 const colorButtons = Array.from(document.getElementById('buttons').getElementsByTagName('button'));
-const siteNavLinks = Array.from(document.getElementbyClass('sameSiteLink'));
+const siteNavLinks = Array.from(document.getElementsByClassName('sameSiteLink'));
 const bod = document.body;
 
 function goRed() {

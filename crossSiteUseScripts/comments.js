@@ -13,6 +13,7 @@ const Comment = (givenTitle, givenText) => {
     //values definitions
     let title = 'Default Title';
     let text = 'Keith Rubin is so smart.';
+    let id = 0;
 
     //setters
     const setTitle = titleToCheck => {
@@ -33,9 +34,19 @@ const Comment = (givenTitle, givenText) => {
             console.log('error: text is not string');
         }
     };
+    const setID = () => {
+        id = Math.floor(Math.random() * 1000000);
+    };
 
     //deploy setters
-    setTitle(given)
+    setTitle(givenTitle);
+    setText(givenText);
+    setID();
 
+    //getter
+    const getComment = () => {
+        return { title, text, id };
+    };
 
+    return { setTitle, setText, getComment };
 };

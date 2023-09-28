@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+    <meta charset"UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Keith Rubin's Website</title>
+    <link rel="stylesheet" href="./postsStyle.css">
+    <script src="../crossSiteUseScripts/handlebars.js"></script>
+    <script id="templateHB" type="text/x-handlebars-template" defer>
+        {{#each posts}}
+        <h2>{{this.title}}</h2>
+        <p>{{this.desc}}</p>
+        {{#if this.commentsNo}}
+        <a href="">See comments</a>
+        {{else}}
+        <p>No comments so far</p>
+        {{/if}}
+        {{/each}}
+    </script>
+    <script src="../crossSiteUseScripts/posts.js" defer></script>
+    <script src="./postsScript.js" defer></script>
+</head>
+
+<body>
+    <!-- Navbar section -->
+    <div>
+        <nav id="navbar">
+            <ul>
+                <li><a class="sameSiteLink" href="../homePage/index.html">Home</a></li>
+                <li><a id="current" class="sameSiteLink" href="#top">Posts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Posts Section -->
+    <div id="posts">
+
+    </div>
+
+</body>
+</html>

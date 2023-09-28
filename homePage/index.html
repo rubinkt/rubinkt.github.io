@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Keith Rubin's Website</title>
-    <link rel="stylesheet" href="./homeStyle.css">
+    <link rel="stylesheet" href="./homeStyle.css">'
+    <script src="../crossSiteUseScripts/handlebars.js"></script>
+    <script id="templateHB" type="text/x-handlebars-template" defer>
+        {{#each posts}}
+            {{#if this.hl}}
+                <h2>{{this.title}}</h2>
+                <p>{{this.desc}}</p>
+            {{/if}}
+        {{/each}}
+    </script>
+    <script src="../crossSiteUseScripts/posts.js" defer></script>'
     <script src="./homeScript.js" defer></script>
 </head>
 
@@ -15,9 +25,7 @@
         <nav id="navbar">
             <ul>
                 <li><a id="current" class="sameSiteLink" href="#top">Home</a></li>
-                <li><a class="sameSiteLink" href="">Projects</a></li>
-                <li><a class="sameSiteLink" href="">Blog</a></li>
-                <li><a class="sameSiteLink" href="">For Potential Business Partners</a></li>
+                <li><a class="sameSiteLink" href="../postsPage/posts.html">Posts</a></li>
             </ul>
         </nav>
     </div>

@@ -3,7 +3,9 @@
  * ---> Insert Liscense <---
  */
 
-
+//I want this in a seperate file
+allPosts = [
+];
 
 //this is a factory function
 //a call will return an object
@@ -16,6 +18,7 @@ const Post = (givenTitle, givenDesc, givenText, givenHL) => {
     let text = '';
     let hl = false;
     const comments = [];
+    let commentsNo = 0;
 
     //setters
     const setTitle = titleToCheck => {
@@ -43,6 +46,7 @@ const Post = (givenTitle, givenDesc, givenText, givenHL) => {
             console.log('error: text is null');
         } else {
             console.log('error: text is not string');
+            console.log(typeof textToCheck);
         }
     };
     const setHL = hlToCheck => {
@@ -52,6 +56,7 @@ const Post = (givenTitle, givenDesc, givenText, givenHL) => {
             console.log('error: highlighted is null');
         } else {
             console.log('error: highlighted is not boolean');
+            console.log(hlToCheck)
         }
     };
 
@@ -63,24 +68,39 @@ const Post = (givenTitle, givenDesc, givenText, givenHL) => {
 
     //comment stuff
     const addCommentKeith = (comTitle, comText) => {
-        
+        const theComment = Comment(comTitle, comText);
+        comments.push(theComment);
+        commentsNo++;
+        return theComment.getComment.id;
     };
     const removeComment = (comID) => {
-
+        specifiedCommentIndex = comments.findIndex(com => {
+            return com.getComment.id === comID;
+        });
+        comments.splice(specifiedCommentIndex, 1);
+        commentsNo--;
     };
 
     //getter
     const getPost = () => {
-        return { title, desc, text, hl, comments };
+        return { title, desc, text, hl, comments, commentsNo };
     };
+
+    //assemble post object
+    const thisPost = { setTitle, setDesc, setText, setHL, getPost, addCommentKeith, removeComment };
+
+    //add post to data
+    allPosts.push(thisPost);
 
     //will the site user be able to call all of these methods from the command line?
     //I don't want them too
-    return { setTitle, setDesc, setText, setHL, getPost, addCommentKeith, removeComment};
+    return thisPost;
 };
 
-const postFromInputString = inputStr => {
+allPosts.push(Post('testing one', 'testing description', 'testing body of text number one ...........', true));
+allPosts.push(Post('testing two', 'testing description 1', 'testing body of the text number two ///////////', false));
 
-}
 
-const allPosts
+/*const postFromInputString = inputStr => {
+
+};*/

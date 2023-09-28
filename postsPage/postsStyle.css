@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 10px;
+    font-family: serif;
+    background: #fefefe;
+}
+
+#navbar {
+    background-color: limegreen;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#current {
+    font-weight: 800;
+}
+
+.sameSiteLink {
+    color: white;
+    text-decoration: none;
+}
+
+#navbar li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+#posts {
+    padding: 100px 0;
+}

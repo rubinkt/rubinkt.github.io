@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Keith Rubin's Website</title>
-    <link rel="stylesheet" href="./homeStyle.css">'
-    <script src="../crossSiteUseScripts/handlebars.js"></script>
+    <link rel="stylesheet" href="./homeStyle.css">
+    <script type="text/javascript" src="../crossSiteUseScripts/handlebars.js" defer></script>
+    <script type="text/javascript" src="../crossSiteUseScripts/posts.js" defer></script>
     <script id="templateHB" type="text/x-handlebars-template" defer>
         {{#each posts}}
-            {{#if this.hl}}
-                <h2>{{this.title}}</h2>
-                <p>{{this.desc}}</p>
-            {{/if}}
+        {{#if this.hl}}
+        <h2>{{this.title}}</h2>
+        <p>{{this.desc}}</p>
+        {{/if}}
         {{/each}}
     </script>
-    <script src="../crossSiteUseScripts/posts.js" defer></script>'
-    <script src="./homeScript.js" defer></script>
+    <script type="text/javascript" src="./homeScript.js" defer></script>
 </head>
 
 <body>

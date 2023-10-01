@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Keith Rubin's Website</title>
     <link rel="stylesheet" href="./postsStyle.css">
-    <script src="../crossSiteUseScripts/handlebars.js"></script>
+    <script type="text/javascript" src="../crossSiteUseScripts/handlebars.js" defer></script>
+    <script type="text/javascript" src="../crossSiteUseScripts/comments.js" defer></script>
+    <script type="text/javascript" src="../crossSiteUseScripts/posts.js" defer></script>
     <script id="templateHB" type="text/x-handlebars-template" defer>
         {{#each posts}}
         <h2>{{this.title}}</h2>
@@ -18,8 +20,7 @@
         {{/if}}
         {{/each}}
     </script>
-    <script src="../crossSiteUseScripts/posts.js" defer></script>
-    <script src="./postsScript.js" defer></script>
+    <script type="text/javascript" src="./postsScript.js" defer></script>
 </head>
 
 <body>

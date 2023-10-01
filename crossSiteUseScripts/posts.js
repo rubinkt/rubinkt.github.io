@@ -3,8 +3,8 @@
  * ---> Insert Liscense <---
  */
 
-//I want this in a seperate file
 allPosts = [
+
 ];
 
 //this is a factory function
@@ -94,13 +94,25 @@ const Post = (givenTitle, givenDesc, givenText, givenHL) => {
 
     //will the site user be able to call all of these methods from the command line?
     //I don't want them too
+    //also should I remove this and only push to array?
     return thisPost;
 };
 
+/*
 allPosts.push(Post('testing one', 'testing description', 'testing body of text number one ...........', true));
 allPosts.push(Post('testing two', 'testing description 1', 'testing body of the text number two ///////////', false));
-
+*/
 
 /*const postFromInputString = inputStr => {
 
 };*/
+
+
+
+Post('testing one', 'testing description', 'testing body of text number one ...........', true),
+Post('testing two', 'testing description 1', 'testing body of the text number two ///////////', false)
+allPosts.forEach(p => {
+    for (let i = 0; i < 5; i++) {
+        p.addCommentKeith('spam SPAM spam', 'spammity spam spam spam');
+    }
+});
